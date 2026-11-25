@@ -2,6 +2,8 @@ export const whatsappHref =
   "https://wa.me/923041628668?text=" +
   encodeURIComponent("Hi Shahmeer, I saw your portfolio and would like to talk.");
 
+export const resumeHref = `${import.meta.env.BASE_URL}Shahmeer_Ahmad_Resume.pdf`;
+
 export const pages = [
   { id: "field", label: "Home" },
   { id: "work", label: "Work" },

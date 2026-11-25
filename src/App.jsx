@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Neural from "./Neural.jsx";
-import { flow, jobs, pages, rails, skills, summary, whatsappHref, work } from "./content.js";
+import { flow, jobs, pages, rails, resumeHref, skills, summary, whatsappHref, work } from "./content.js";
 import { logos } from "./logos.js";
 
 export default function App() {
@@ -76,6 +76,9 @@ function Field({ onWork, onSignal }) {
         </button>
         <a className="ghost linkish" href={whatsappHref} target="_blank" rel="noreferrer">
           WhatsApp me
+        </a>
+        <a className="ghost linkish" href={resumeHref} download>
+          Download resume
         </a>
       </div>
       <div className="stacks">
@@ -269,11 +272,20 @@ function Contact({ go }) {
           <li>Bahawalpur, Pakistan</li>
           <li>English and Urdu</li>
         </ul>
-        <button type="button" className="ghost" onClick={() => go("work")}>
-          Read the work first
-        </button>
+        <div className="hero-actions">
+          <button type="button" className="ghost" onClick={() => go("work")}>
+            Read the work first
+          </button>
+          <a className="solid linkish" href={resumeHref} download>
+            Download resume
+          </a>
+        </div>
       </div>
       <div className="contact-card">
+        <a className="channel" href={resumeHref} download>
+          <small>Resume</small>
+          <strong>Download the PDF</strong>
+        </a>
         <a className="channel" href={whatsappHref} target="_blank" rel="noreferrer">
           <small>WhatsApp</small>
           <strong>Message +92 304 1628668</strong>
@@ -318,6 +330,7 @@ function Footer({ go }) {
         ))}
       </div>
       <div className="foot-meta">
+        <a href={resumeHref} download>Resume</a>
         <a href={whatsappHref} target="_blank" rel="noreferrer">WhatsApp</a>
         <a href="mailto:shahmeerofficial786@gmail.com">Email</a>
         <a href="tel:+923041628668">+92 304 1628668</a>
